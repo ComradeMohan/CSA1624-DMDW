@@ -1,0 +1,24 @@
+# Given data
+data <- c(200, 300, 400, 600, 1000)
+
+# Min-max normalization by setting min = 0 and max = 1
+min_max_normalize <- function(x) {
+  min_val <- min(x)
+  max_val <- max(x)
+  normalized_data <- (x - min_val) / (max_val - min_val)
+  return(normalized_data)
+}
+
+min_max_normalized_data <- min_max_normalize(data)
+cat("Min-Max Normalization (0-1):\n", min_max_normalized_data, "\n")
+
+# Z-score normalization
+z_score_normalize <- function(x) {
+  mean_val <- mean(x)
+  std_dev <- sd(x)
+  normalized_data <- (x - mean_val) / std_dev
+  return(normalized_data)
+}
+
+z_score_normalized_data <- z_score_normalize(data)
+cat("Z-Score Normalization:\n", z_score_normalized_data,"\n")
